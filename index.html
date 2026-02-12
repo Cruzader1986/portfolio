@@ -2,75 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Albert Cruz | iOS Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Albert Cruz | Senior iOS Developer</title>
+    
     <style>
-        :root {
-            --bg: #0b0e14;
-            --card: #161b22;
-            --accent: #007aff; /* iOS Blue */
-            --text: #f0f6fc;
-            --secondary: #8b949e;
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; margin-bottom: 60px; }
-        h1 { margin: 0; font-size: 2.5rem; color: var(--accent); }
-        .subtitle { color: var(--secondary); font-size: 1.2rem; }
-        
-        section { margin-bottom: 40px; }
-        h2 { border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-bottom: 20px; }
-        
-        .project-card { background: var(--card); border: 1px solid #30363d; border-radius: 12px; padding: 25px; margin-bottom: 20px; }
-        .tag { display: inline-block; background: #238636; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; }
-        
-        .skill-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
-        .skill-item { background: #21262d; padding: 10px; border-radius: 6px; text-align: center; border: 1px solid #30363d; }
-        
-        footer { text-align: center; color: var(--secondary); font-size: 0.9rem; margin-top: 60px; }
-        a { color: var(--accent); text-decoration: none; }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-top: 50px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack span {
+            display: inline-block;
+            background: #334155;
+            padding: 6px 10px;
+            margin: 5px 5px 0 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            background: #1e293b;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
 
+<header>
+    <h1>Albert Cruz</h1>
+    <p>iOS Developer | Swift | Objective-C | Backend-Aware Engineer</p>
+</header>
+
 <div class="container">
-    <header>
-        <h1>Albert Cruz</h1>
-        <p class="subtitle">Senior Software Developer | iOS Specialist</p>
-        <p>15+ years of experience building scalable mobile and web applications.</p>
-    </header>
 
-    <section id="featured">
-        <h2>Featured iOS Experience</h2>
-        <div class="project-card">
-            <h3>LOQ Secure Messenger</h3>
-            <span class="tag">Swift</span> <span class="tag">Objective-C</span> <span class="tag">Kotlin</span>
-            <p>Lead developer for a secure messaging platform across iOS and Android. Focused on high-level security, UI/UX collaboration, and mentoring junior developers.</p>
+    <section>
+        <h2>About Me</h2>
+        <div class="card">
+            <p>
+                iOS Developer with strong foundations in backend systems and large-scale platform architecture.
+                Started career in 2008 working on enterprise web systems and transitioned into mobile development,
+                bringing deep understanding of APIs, media systems, and scalable software design.
+            </p>
+            <p>
+                Experienced in working with complex production codebases and optimizing performance-critical systems.
+            </p>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Technical Stack</h2>
-        <div class="skill-list">
-            <div class="skill-item">Swift / Obj-C </div>
-            <div class="skill-item">Java / Kotlin </div>
-            <div class="skill-item">C# / SQL </div>
-            <div class="skill-item">HTML / CSS / JS </div>
+    <section>
+        <h2>iOS Tech Stack</h2>
+        <div class="card tech-stack">
+            <span>Swift</span>
+            <span>Objective-C</span>
+            <span>UIKit</span>
+            <span>SwiftUI</span>
+            <span>MVVM</span>
+            <span>Core Data</span>
+            <span>URLSession</span>
+            <span>AVFoundation</span>
+            <span>Background Tasks</span>
+            <span>Xcode</span>
+            <span>Git</span>
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Professional Journey</h2>
-        <p><strong>Miller Development AB</strong> | Senior Developer (2020 - Current) </p>
-        <p><strong>ProSMART</strong> | Senior Developer (2012 - 2020) </p>
-        <p><strong>Chuzi</strong> | Web Developer (2010 - 2012) </p>
+    <section>
+        <h2>Projects</h2>
+
+        <div class="card">
+            <h3>Signal iOS Modification</h3>
+            <p><span class="highlight">Tech:</span> Swift, Objective-C, UIKit</p>
+            <p>
+                Forked and modified the Signal-iOS codebase. Worked on UI behavior adjustments,
+                navigation updates, and understanding large-scale encrypted messaging architecture.
+                Demonstrated ability to work within a complex production-level codebase.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Media & Streaming Optimization</h3>
+            <p><span class="highlight">Tech:</span> AVFoundation, Networking, Backend Integration</p>
+            <p>
+                Designed and optimized media streaming workflows with focus on performance and
+                efficient large file handling. Strong understanding of video pipelines and client-server interaction.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Crestock Platform Migration (2008–2009)</h3>
+            <p><span class="highlight">Tech:</span> ASP.NET (C#), SQL Server, IIS</p>
+            <p>
+                Contributed to migrating a legacy stock photography platform into ASP.NET.
+                Reimplemented backend components, integrated database layers, and maintained
+                production stability during transition.
+            </p>
+            <p>
+                This early career experience built strong foundations in system architecture,
+                media-heavy platforms, and backend logic that now inform my mobile engineering approach.
+            </p>
+        </div>
+
     </section>
 
-    <footer>
-        <p>Contact: cruz.albert1986@gmail.com | +639204326886 </p>
-        <p>Skype: cruz.albert.1986 </p>
-    </footer>
+    <section>
+        <h2>Engineering Principles</h2>
+        <div class="card">
+            <ul>
+                <li>Clean, modular Swift code</li>
+                <li>Separation of concerns (MVVM)</li>
+                <li>Efficient async & networking handling</li>
+                <li>Performance profiling & optimization</li>
+                <li>Backend-aware mobile architecture</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <div class="card">
+            <p>Email: your@email.com</p>
+            <p>GitHub: <a href="#">github.com/yourusername</a></p>
+            <p>Location: Philippines</p>
+        </div>
+    </section>
+
 </div>
+
+<footer>
+    © 2026 Albert Cruz — iOS Developer Portfolio
+</footer>
 
 </body>
 </html>
