@@ -2,179 +2,275 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Albert Cruz | iOS Developer</title>
+    <title>Albert Cruz | Senior Software Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <style>
+        :root {
+            --bg: #020617;
+            --card: #0f172a;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+        }
+
+        html { scroll-behavior: smooth; }
+
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
-            background-color: #0f172a;
-            color: #e2e8f0;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
         header {
-            padding: 60px 20px;
+            padding: 120px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+            background: radial-gradient(circle at top right, #1e293b, transparent), 
+                        radial-gradient(circle at bottom left, #0f172a, transparent);
+            border-bottom: 1px solid var(--border);
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            margin: 0 0 10px;
+            letter-spacing: -1.5px;
+            font-weight: 800;
         }
 
-        h2 {
-            color: #38bdf8;
-            margin-top: 50px;
+        .hero-sub {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: auto;
-            padding: 20px;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-main);
+        }
+
+        h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border);
         }
 
         .card {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
         }
 
-        .tech-stack span {
-            display: inline-block;
-            background: #334155;
-            padding: 6px 10px;
-            margin: 5px 5px 0 0;
-            border-radius: 5px;
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .tech-group { margin-bottom: 15px; }
+        .tech-group label { 
+            display: block; 
+            color: var(--accent); 
+            font-size: 0.75rem; 
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tags span {
+            background: rgba(30, 41, 59, 0.5);
+            color: var(--text-main);
+            padding: 5px 14px;
+            border-radius: 8px;
             font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .project-title h3 { margin: 0; font-size: 1.5rem; color: var(--text-main); }
+        .project-category { color: var(--accent); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-top: 4px; display: block;}
+        .project-date { color: var(--text-muted); font-size: 0.9rem; font-family: monospace; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .principle-item {
+            background: rgba(30, 41, 59, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            border-left: 3px solid var(--border);
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-            background: #1e293b;
+            padding: 80px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        a {
-            color: #38bdf8;
+        .btn-outline {
+            display: inline-block;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.2s;
         }
 
-        .highlight {
-            color: #38bdf8;
-            font-weight: bold;
+        .btn-outline:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-
 <body>
 
 <header>
     <h1>Albert Cruz</h1>
-    <p>iOS Developer | Swift | Objective-C | Backend-Aware Engineer</p>
+    <p class="hero-sub">Senior Software Engineer with 15+ years of experience building high-performance systems and cross-platform mobile solutions.</p>
+    <a href="mailto:cruz.albert1986@gmail.com" class="btn-outline">Contact Me</a>
 </header>
 
 <div class="container">
 
-    <section>
-        <h2>About Me</h2>
+    <section id="stack">
+        <h2>Technical Stack</h2>
         <div class="card">
-            <p>
-                iOS Developer with strong foundations in backend systems and large-scale platform architecture.
-                Started career in 2008 working on enterprise web systems and transitioned into mobile development,
-                bringing deep understanding of APIs, media systems, and scalable software design.
-            </p>
-            <p>
-                Experienced in working with complex production codebases and optimizing performance-critical systems.
-            </p>
+            <div class="tech-group">
+                <label>MOBILE DEVELOPMENT</label>
+                <div class="tags">
+                    <span>Swift</span> <span>Objective-C</span> <span>Kotlin</span> <span>Java</span> <span>SwiftUI / UIKit</span>
+                </div>
+            </div>
+            <br>
+            <div class="tech-group">
+                <label>BACKEND & WEB FRONTEND</label>
+                <div class="tags">
+                    <span>Node.js</span> <span>TypeScript</span> <span>React</span> <span>JavaScript</span> <span>CSS</span> <span>C# / .NET</span> <span>SQL Server</span> <span>RESTful APIs</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2>iOS Tech Stack</h2>
-        <div class="card tech-stack">
-            <span>Swift</span>
-            <span>Objective-C</span>
-            <span>UIKit</span>
-            <span>SwiftUI</span>
-            <span>MVVM</span>
-            <span>Core Data</span>
-            <span>URLSession</span>
-            <span>AVFoundation</span>
-            <span>Background Tasks</span>
-            <span>Xcode</span>
-            <span>Git</span>
+    <section id="projects">
+        <h2>Featured Projects</h2>
+
+        <div class="card">
+            <div class="project-header">
+                <div class="project-title">
+                    <h3>LOQ Secure Messenger</h3>
+                    <span class="project-category">Privacy-First Communication</span>
+                </div>
+                <span class="project-date">2020 — 2026</span>
+            </div>
+            <p>Lead developer for a high-security communication platform utilizing hardened messaging protocols. I managed the production codebases for both iOS and Android, focusing on <b>End-to-End Encryption (E2EE)</b> and peer-to-peer data privacy. I designed and built a dedicated <b>Administrative Management Portal</b> using <b>React</b> and <b>Node.js</b> that allows companies to securely oversee user accounts and contact lists, ensuring enterprise-level control without compromising communication security.</p>
+            <div class="tags">
+                <span>Swift</span> <span>Objective-C</span> <span>Java</span> <span>Kotlin</span> <span>Node.js</span> <span>React</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="project-header">
+                <div class="project-title">
+                    <h3>ProSMART</h3>
+                    <span class="project-category">Full-Stack SaaS Architecture</span>
+                </div>
+                <span class="project-date">2012 — 2020</span>
+            </div>
+            <p>Architected a comprehensive Project Management suite centered around a sophisticated <b>questionnaire-driven logic engine</b>. I designed the end-to-end technical lifecycle, developing a <b>C# server</b> and <b>ASP.NET website</b> that automatically generates critical project deliverables like <b>Schedules, Role Requirements, and Risk Assessments</b> based on user input. I also built a robust <b>Contact & User Management System</b>, enabling organization leaders to handle thousands of entities with complex relational data in <b>SQL Server</b>.</p>
+            <div class="tags">
+                <span>ASP.NET</span> <span>C#</span> <span>SQL Server</span> <span>JavaScript</span> <span>HTML / CSS</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="project-header">
+                <div class="project-title">
+                    <h3>Chuzi</h3>
+                    <span class="project-category">Greenfield Development</span>
+                </div>
+                <span class="project-date">2010 — 2012</span>
+            </div>
+            <p>Designed and built a social dating platform from the ground up as a lead technical architect. I developed a high-concurrency <b>C# server</b> and <b>ASP.NET website</b> backed by <b>SQL Server</b>, ensuring smooth data flow for real-time interactions. I integrated third-party APIs for automated SMS notifications and delivered a seamless cross-platform mobile experience using a hybrid web-view container.</p>
+            <div class="tags">
+                <span>ASP.NET</span> <span>C#</span> <span>SQL Server</span> <span>JavaScript</span> <span>HTML / CSS</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="project-header">
+                <div class="project-title">
+                    <h3>Crestock</h3>
+                    <span class="project-category">System Modernization</span>
+                </div>
+                <span class="project-date">2008 — 2009</span>
+            </div>
+            <p>Executed a major technical migration for a global digital media marketplace. Re-engineered legacy backend components in <b>VB.NET</b> and <b>ASP.NET</b> with <b>SQL Server</b> while completely overhauling the <b>CSS/UI</b> layer. This modernization improved system performance and optimized the asset delivery pipeline for international users.</p>
+            <div class="tags">
+                <span>VB.NET</span> <span>ASP.NET</span> <span>SQL Server</span> <span>CSS / JS</span>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2>Projects</h2>
-
-        <div class="card">
-            <h3>Signal iOS Modification</h3>
-            <p><span class="highlight">Tech:</span> Swift, Objective-C, UIKit</p>
-            <p>
-                Forked and modified the Signal-iOS codebase. Worked on UI behavior adjustments,
-                navigation updates, and understanding large-scale encrypted messaging architecture.
-                Demonstrated ability to work within a complex production-level codebase.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Media & Streaming Optimization</h3>
-            <p><span class="highlight">Tech:</span> AVFoundation, Networking, Backend Integration</p>
-            <p>
-                Designed and optimized media streaming workflows with focus on performance and
-                efficient large file handling. Strong understanding of video pipelines and client-server interaction.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Crestock Platform Migration (2008–2009)</h3>
-            <p><span class="highlight">Tech:</span> ASP.NET (C#), SQL Server, IIS</p>
-            <p>
-                Contributed to migrating a legacy stock photography platform into ASP.NET.
-                Reimplemented backend components, integrated database layers, and maintained
-                production stability during transition.
-            </p>
-            <p>
-                This early career experience built strong foundations in system architecture,
-                media-heavy platforms, and backend logic that now inform my mobile engineering approach.
-            </p>
-        </div>
-
-    </section>
-
-    <section>
+    <section id="principles">
         <h2>Engineering Principles</h2>
-        <div class="card">
-            <ul>
-                <li>Clean, modular Swift code</li>
-                <li>Separation of concerns (MVVM)</li>
-                <li>Efficient async & networking handling</li>
-                <li>Performance profiling & optimization</li>
-                <li>Backend-aware mobile architecture</li>
-            </ul>
+        <div class="grid">
+            <div class="principle-item">💎 <b>Full-Stack Quality:</b> Expertly handling the data lifecycle across frontends, backends, and mobile interfaces.</div>
+            <div class="principle-item">🛠️ <b>Technical Ownership:</b> 15+ years of experience leading the full SDLC, from initial architecture to final deployment.</div>
+            <div class="principle-item">📊 <b>Data Management:</b> Strong foundation in <b>SQL Server</b> and performance optimization for relational datasets.</div>
+            <div class="principle-item">🌍 <b>Global Reach:</b> Successful remote collaboration with international firms across different time zones.</div>
         </div>
     </section>
 
-    <section>
+    <section id="contact">
         <h2>Contact</h2>
-        <div class="card">
-            <p>Email: your@email.com</p>
-            <p>GitHub: <a href="#">github.com/yourusername</a></p>
-            <p>Location: Philippines</p>
+        <div class="card" style="text-align: center;">
+            <p>Email: <a href="mailto:cruz.albert1986@gmail.com" style="color: var(--accent); font-weight: bold;">cruz.albert1986@gmail.com</a></p>
+            <p>Phone: +639204326886</p>
         </div>
     </section>
 
 </div>
 
 <footer>
-    © 2026 Albert Cruz — iOS Developer Portfolio
+    © 2026 Albert Cruz — Senior Software Engineer
 </footer>
 
 </body>
