@@ -26,7 +26,7 @@
         }
 
         header {
-            padding: 120px 20px;
+            padding: 60px 20px;
             text-align: center;
             background: radial-gradient(circle at top right, #1e293b, transparent), 
                         radial-gradient(circle at bottom left, #0f172a, transparent);
@@ -34,16 +34,16 @@
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             margin: 0 0 10px;
             letter-spacing: -1.5px;
             font-weight: 800;
         }
 
         .hero-sub {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
             font-weight: 400;
         }
@@ -55,13 +55,16 @@
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-top: 60px;
             margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 15px;
-            color: var(--text-main);
+            color: var(--accent);
+            font-weight: 700;
         }
 
         h2::after {
@@ -77,19 +80,20 @@
             padding: 30px;
             border-radius: 16px;
             margin-bottom: 24px;
-            transition: border-color 0.2s ease, transform 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .card:hover {
             border-color: var(--accent);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
         }
 
         .tech-group { margin-bottom: 15px; }
         .tech-group label { 
             display: block; 
             color: var(--accent); 
-            font-size: 0.75rem; 
+            font-size: 0.7rem; 
             margin-bottom: 10px;
             font-weight: 700;
             letter-spacing: 1.5px;
@@ -97,11 +101,11 @@
 
         .tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .tags span {
-            background: rgba(30, 41, 59, 0.5);
+            background: rgba(255, 255, 255, 0.03);
             color: var(--text-main);
-            padding: 5px 14px;
-            border-radius: 8px;
-            font-size: 0.9rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
             border: 1px solid var(--border);
         }
 
@@ -112,9 +116,35 @@
             margin-bottom: 15px;
         }
 
-        .project-title h3 { margin: 0; font-size: 1.5rem; color: var(--text-main); }
-        .project-category { color: var(--accent); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-top: 4px; display: block;}
-        .project-date { color: var(--text-muted); font-size: 0.9rem; font-family: monospace; }
+        .project-title h3 { margin: 0; font-size: 1.4rem; color: var(--text-main); }
+        .project-category { color: var(--accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 4px; display: block; letter-spacing: 0.5px;}
+        
+        .project-meta { text-align: right; }
+        .project-date { color: var(--text-muted); font-size: 0.85rem; font-family: monospace; opacity: 0.8; display: block; margin-bottom: 8px;}
+        
+        .link-group {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .action-link {
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-decoration: none;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 2px 10px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .action-link:hover {
+            background: var(--accent);
+            color: #020617;
+            border-color: var(--accent);
+        }
 
         .grid {
             display: grid;
@@ -123,40 +153,46 @@
         }
 
         .principle-item {
-            background: rgba(30, 41, 59, 0.3);
-            padding: 20px;
+            background: rgba(30, 41, 59, 0.2);
+            padding: 24px;
             border-radius: 12px;
-            font-size: 0.95rem;
-            border-left: 3px solid var(--border);
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
         }
 
         footer {
             text-align: center;
             padding: 80px 20px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         .btn-outline {
             display: inline-block;
             border: 1px solid var(--accent);
             color: var(--accent);
-            padding: 12px 30px;
+            padding: 10px 24px;
             border-radius: 8px;
             font-weight: 600;
+            font-size: 0.9rem;
             text-decoration: none;
-            margin-top: 30px;
+            margin-top: 25px;
             transition: all 0.2s;
         }
 
         .btn-outline:hover {
             background: var(--accent);
-            color: #000;
+            color: #020617;
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
+            h1 { font-size: 2.2rem; }
             .grid { grid-template-columns: 1fr; }
+            .project-header { flex-direction: column; gap: 15px; }
+            .project-meta { text-align: left; }
+            .link-group { justify-content: flex-start; }
         }
     </style>
 </head>
@@ -164,7 +200,7 @@
 
 <header>
     <h1>Albert Cruz</h1>
-    <p class="hero-sub">Senior Software Engineer with 15+ years of experience building high-performance systems and cross-platform mobile solutions.</p>
+    <p class="hero-sub">Senior Software Engineer with 15+ years of experience building high-performance systems and cross-platform native mobile solutions.</p>
     <a href="mailto:cruz.albert1986@gmail.com" class="btn-outline">Contact Me</a>
 </header>
 
@@ -198,9 +234,15 @@
                     <h3>LOQ Secure Messenger</h3>
                     <span class="project-category">Privacy-First Communication</span>
                 </div>
-                <span class="project-date">2020 — 2026</span>
+                <div class="project-meta">
+                    <span class="project-date">2020 — 2026</span>
+                    <div class="link-group">
+                        <a href="https://apps.apple.com/us/app/loq-secure-messenger/id1582762914" target="_blank" class="action-link">iOS App Store ↗</a>
+                        <a href="https://play.google.com/store/apps/details?id=org.loq.app&pli=1" target="_blank" class="action-link">Google Play ↗</a>
+                    </div>
+                </div>
             </div>
-            <p>Lead developer for a high-security communication platform utilizing hardened messaging protocols. I managed the production codebases for both iOS and Android, focusing on <b>End-to-End Encryption (E2EE)</b> and peer-to-peer data privacy. I designed and built a dedicated <b>Administrative Management Portal</b> using <b>React</b> and <b>Node.js</b> that allows companies to securely oversee user accounts and contact lists, ensuring enterprise-level control without compromising communication security.</p>
+            <p>Lead developer for a high-security communication platform utilizing hardened messaging protocols. I managed the production codebases for <b>native iOS and Android applications</b>, focusing on <b>End-to-End Encryption (E2EE)</b> and peer-to-peer data privacy. I designed and built a dedicated <b>Administrative Management Portal</b> using <b>React</b> and <b>Node.js</b> that allows companies to securely oversee user accounts and contact lists.</p>
             <div class="tags">
                 <span>Swift</span> <span>Objective-C</span> <span>Java</span> <span>Kotlin</span> <span>Node.js</span> <span>React</span>
             </div>
@@ -214,7 +256,7 @@
                 </div>
                 <span class="project-date">2012 — 2020</span>
             </div>
-            <p>Architected a comprehensive Project Management suite centered around a sophisticated <b>questionnaire-driven logic engine</b>. I designed the end-to-end technical lifecycle, developing a <b>C# server</b> and <b>ASP.NET website</b> that automatically generates critical project deliverables like <b>Schedules, Role Requirements, and Risk Assessments</b> based on user input. I also built a robust <b>Contact & User Management System</b>, enabling organization leaders to handle thousands of entities with complex relational data in <b>SQL Server</b>.</p>
+            <p>Architected a comprehensive Project Management suite centered around a sophisticated <b>questionnaire-driven logic engine</b>. I designed the end-to-end technical lifecycle, developing a <b>C# server</b> and <b>ASP.NET website</b> that automatically generates critical project deliverables like <b>Schedules, Role Requirements, and Risk Assessments</b> based on user input. I also built a robust <b>Contact & User Management System</b> utilizing <b>SQL Server</b>.</p>
             <div class="tags">
                 <span>ASP.NET</span> <span>C#</span> <span>SQL Server</span> <span>JavaScript</span> <span>HTML / CSS</span>
             </div>
@@ -224,11 +266,17 @@
             <div class="project-header">
                 <div class="project-title">
                     <h3>Chuzi</h3>
-                    <span class="project-category">Greenfield Development</span>
+                    <span class="project-category">Multi-Platform Dating Ecosystem</span>
                 </div>
-                <span class="project-date">2010 — 2012</span>
+                <div class="project-meta">
+                    <span class="project-date">2010 — 2012</span>
+                    <div class="link-group">
+                        <a href="https://www.philstar.com/lifestyle/supreme/2011/07/09/703786/when-dreamdates-get-chuzi" target="_blank" class="action-link">Press Coverage ↗</a>
+                        <a href="https://raw.githubusercontent.com/Cruzader1986/portfolio/refs/heads/main/chuzi-flow.png" target="_blank" class="action-link">Logic Flow ↗</a>
+                    </div>
+                </div>
             </div>
-            <p>Designed and built a social dating platform from the ground up as a lead technical architect. I developed a high-concurrency <b>C# server</b> and <b>ASP.NET website</b> backed by <b>SQL Server</b>, ensuring smooth data flow for real-time interactions. I integrated third-party APIs for automated SMS notifications and delivered a seamless cross-platform mobile experience using a hybrid web-view container.</p>
+            <p>Lead technical architect for a <b>cross-media dating ecosystem</b> bridging online, mobile, and television platforms. I developed a <b>gamified Secret Admirer matching system</b> where users identify their admirer from a pool of profiles to unlock matches. I built the high-concurrency <b>C# / SQL Server</b> backend and <b>ad-supported infrastructure</b> required to support national media integration and real-time state management.</p>
             <div class="tags">
                 <span>ASP.NET</span> <span>C#</span> <span>SQL Server</span> <span>JavaScript</span> <span>HTML / CSS</span>
             </div>
@@ -262,7 +310,7 @@
     <section id="contact">
         <h2>Contact</h2>
         <div class="card" style="text-align: center;">
-            <p>Email: <a href="mailto:cruz.albert1986@gmail.com" style="color: var(--accent); font-weight: bold;">cruz.albert1986@gmail.com</a></p>
+            <p>Email: <a href="mailto:cruz.albert1986@gmail.com" style="color: var(--accent); font-weight: bold; text-decoration: none;">cruz.albert1986@gmail.com</a></p>
             <p>Phone: +639204326886</p>
         </div>
     </section>
